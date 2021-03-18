@@ -57,11 +57,12 @@ a:hover {
   top: 20px;
 }
 
-/* .control-panel {
-  position: absolute;
+.control-panel {
+  /* position: absolute;
   left: 10px;
-  top: 10px;
-} */
+  top: 10px; */
+  height: 480px;
+}
 
 .loading {
   display: flex;

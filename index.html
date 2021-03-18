@@ -13,8 +13,9 @@
 </head>
 
 <body>
-  <textarea name="" id="text" cols="50" rows="10"></textarea>
+  <h1 id="text">Now Loading</h1>
   <button id="clear">クリア</button>
+  <button id="count3">3秒記録</button>
 
   <div class="container">
     <video class="input_video"></video>
@@ -34,6 +35,8 @@
   </div>
   <div class="control-panel">
   </div>
+
+  <div id='handsarray'><p>[0]x</p></div>
 
 
   <script src="script.js"></script>
@@ -75,8 +78,8 @@
           const classification = results.multiHandedness[index];
           const isRightHand = classification.label === 'Right';
           const landmarks = results.multiHandLandmarks[index];
-          peace(landmarks);
-          // console.log(landmarks[1].x);landmarks[2].x < landmarks[4].x && landmarks[16].y < landmarks[14].y && landmarks[20].y < landmarks[18].y && landmarks[7].y < landmarks[8].y && landmarks[11].y < landmarks[12].y
+          peace(landmarks, isRightHand);
+          
           drawConnectors(
             canvasCtx, landmarks, HAND_CONNECTIONS,
             { color: isRightHand ? '#00FF00' : '#FF0000' });
